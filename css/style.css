@@ -620,7 +620,8 @@ p {
       opacity 250ms var(--taming-function);
 }
 
-.link-filter:hover .item-text {
+.link-filter:hover .item-text,
+.link-filter:focus .item-text {
     transform: translateY(0);
     opacity: 1;
 }
