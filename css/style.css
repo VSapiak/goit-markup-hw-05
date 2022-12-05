@@ -101,21 +101,18 @@ p {
     cursor: pointer;
     width: 24px;
     height: 24px;
-    background-color: #E7E9FC;
+    background-color: var(--color-cornflower);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
 }
 
 .button-close {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    background-image: url('/images/Vector.svg');
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/Vector.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 8px;
   }
 
 
