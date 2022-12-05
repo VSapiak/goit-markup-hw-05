@@ -16,6 +16,8 @@ body {
     --color-white: #FFFFFF;
     --color-green: #31D0AA;
     --color-helper: #8E8F99;
+
+    --taming-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -58,6 +60,65 @@ p {
 
 /*----------------- Navigetion ------------------*/
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 47, 66, 0.4);
+    z-index: 1;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 576px;
+    width: 408px;
+
+
+    background-color: var(--color-cloud);
+    border-radius: 4px;
+
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.button-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 24px;
+    margin-right: 24px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-color: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.button-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-image: url('/images/Vector.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+
 .header {
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -96,9 +157,32 @@ p {
     color: var(--color-navy-blue);
 }
 
+.menu-item .activ {
+    position: relative;
+    display: block;
+    padding: 24px 6px 24px 6px;
+    color: var(--color-iris);
+}
+
+
+.activ::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-iris);
+    border-radius: 2px;
+}
+
 .menu-item .menu-link:hover,
 .menu-item .menu-link:focus {
     color: var(--color-slate);
+}
+
+.menu-item .activ:hover {
+    color: var(--color-iris);
 }
 
 .menu-item .menu-link:active {
@@ -500,9 +584,37 @@ p {
     margin-bottom: 49px;
 }
 
+.text-item-efect {
+    position: relative;
+    overflow: hidden;
+    
+}
+
 .item-text {
     line-height: 1.5;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 40px 32px 0;
+
+    background: rgba(33, 150, 243, 0.9);
     color: var(--color-cloud);
+
+    opacity: 0;
+
+    transform: translateY(100%);
+    transition: transform 250ms var(--taming-function),
+      opacity 250ms var(--taming-function);
+}
+
+.link-filter:hover .item-text {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .link-filter {
@@ -535,7 +647,6 @@ p {
 }
 
 .text {
-    font-size: 16px;
     line-height: 1.5;
     color: var(--color-slate);
 }

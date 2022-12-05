@@ -28,13 +28,22 @@
         <nav class="nav_menu">
           <ul class="menu-item">
             <li class="menu list">
-              <a class="menu-link" href="#">Studio</a>
+              <a class="menu-link activ" href="#">Studio</a>
             </li>
             <li class="menu list">
               <a class="menu-link" href="./portfolio.html">Portfolio</a>
             </li>
             <li class="menu list">
-              <a class="menu-link" href="#">Contacts</a>
+                <a class="menu-link" href="#" data-modal-open >Contacts</a>
+                <div class="backdrop is-hidden" data-modal>
+                  <div class="modal">
+                    <button class="button-modal" data-modal-close>
+                      <svg class="button-close" widht="8" height="8">
+                        <use href="./images/Vector.svg"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
             </li>
           </ul>
         </nav>
@@ -428,5 +437,7 @@
         </div>
       </div>
     </footer>
+    <script src="./modal.js"></script>
+
   </body>
 </html>
