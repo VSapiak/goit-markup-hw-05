@@ -104,16 +104,12 @@ p {
     background-color: var(--color-cornflower);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-}
 
-.button-close {
-    width: 24px;
-    height: 24px;
     background-image: url('../images/Vector.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 8px;
-  }
+}
 
 
 .header {
